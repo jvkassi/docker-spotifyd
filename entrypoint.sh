@@ -6,7 +6,10 @@ then
    exit 0
 fi
 
-spotifyd -u $USERNAME -p $PASSWORD --device_name $USERNAME
+DEVICE=${DEVICE:-$(echo $USERNAME | cut -d @ -f 1 | sed 's/\./-/' | sed 's/_//')}
+
+# Launch spotifyd in background
+spotifyd -u $USERNAME -p $PASSWORD --device_name $DEVICE
 
 exec spotifyd-http -u $USERNAME -p $PASSWORD -n `hostname`
 
