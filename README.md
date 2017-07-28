@@ -1,7 +1,7 @@
-docker.io Spotifyd - Spotify Device + Remote Control
+docker.io Spotifyd - Spotify Device 
 ===================================================
 
-Simple dockerfile with spotifyd + spotifyd-http
+Simple dockerfile with spotifyd
 
 
 Configure it
@@ -27,7 +27,6 @@ USERNAME=$1
 PASSWORD=$2
 
 docker run \
-     -p 6767:6767 \
      -e USERNAME=$USERNAME \
      -e PASSWORD=$PASSWORD \
       mib4fun/spotifyd
@@ -43,8 +42,3 @@ cd docker-spotifyd
 docker build -t . spotifyd
 ```
 
-
-Ports
------
-
-* `6767` - Spotifyd remote control server
