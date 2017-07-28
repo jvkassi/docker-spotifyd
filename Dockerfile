@@ -10,6 +10,4 @@ ADD bin /usr/bin
 ADD entrypoint.sh /usr/bin
 ADD spotifyd/spotifyd.conf /root/.config/spotifyd/spotifyd.conf 
 
-EXPOSE 6767
-
-ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+CMD ["/usr/bin/entrypoint.sh"]
